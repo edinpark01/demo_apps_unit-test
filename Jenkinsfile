@@ -8,6 +8,7 @@ pipeline {
     stages {
         stage('Setup Virtual Environment'){
             steps {
+                sh 'rm -rf ${WORKSPACE}/venv'
                 sh 'mkdir ${WORKSPACE}/venv'
                 sh 'python3 -m venv ${WORKSPACE}/venv && source ${WORKSPACE}/venv/bin/activate'
                 sh 'python main.py'
