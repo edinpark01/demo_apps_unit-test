@@ -13,6 +13,7 @@ pipeline {
         }
         stage('Setup Virtual Environment'){
             steps {
+                sh '$VENV_HOME'
                 sh 'python3 -m venv $VENV_HOME && source $VENV_HOME/bin/activate'
                 //sh 'pip install -r requirements.txt'
             }
