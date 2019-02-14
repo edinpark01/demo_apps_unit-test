@@ -10,12 +10,8 @@ pipeline {
             steps {
                 sh 'mkdir ${WORKSPACE}/env'
                 sh 'python3 -m venv ${WORKSPACE}/env && source ${WORKSPACE}/env/bin/activate'
-                //sh 'pip install -r requirements.txt'
-            }
-        }
-        stage('Test environment') {
-            steps {
                 sh 'python main.py'
+                //sh 'pip install -r requirements.txt'
             }
         }
     }
