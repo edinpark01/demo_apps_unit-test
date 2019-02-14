@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-      PATH="/var/lib/jenkins/miniconda3/bin:$PATH"
+        $VENV_HOME = '${WORKSPACE}/venv'
     }
 
     stages {
@@ -11,16 +11,16 @@ pipeline {
                 sh 'printenv'
             }
         }
-        stage('Build environment') {
+        stage('Setup Virtual Environment'){
             steps {
-                echo "Build Environment"
-                //sh '''conda create --yes -n ${BUILD_TAG} python source activate ${BUILD_TAG} pip install -r requirements.txt '''
+                sh 'python3 -m venv $VENV_HOME && source $VENV_HOME/bin/activate'
+                //sh 'pip install -r requirements.txt'
             }
         }
         stage('Test environment') {
             steps {
                 echo "Test environment"
-                //sh 'source activate ${BUILD_TAG} pip list which pip which python'
+                sh 'source activate ${$VENV_HOME} pip list which pip which python'
             }
         }
     }
