@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Setup Virtual Environment'){
             steps {
-                bash '''#!/bin/bash
+                sh '''#!/bin/bash
                         python3 -m venv ${WORKSPACE}/venv && source ${WORKSPACE}/venv/bin/activate
                         printenv
                     '''
