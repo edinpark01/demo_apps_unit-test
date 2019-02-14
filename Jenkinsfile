@@ -6,8 +6,7 @@ pipeline {
             steps {
                 sh '''printenv
                 python3 -m venv ${WORKSPACE}/venv
-                source ${WORKSPACE}/venv/bin/activate
-                printenv'''
+                '''
             }
         }
         stage('Print Environment Variables'){
