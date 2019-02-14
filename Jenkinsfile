@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('TESTING') {
             steps{
-                sh 'which python'
+                sh 'echo $(which python)'
             }
             
         }
