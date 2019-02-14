@@ -7,6 +7,11 @@ pipeline {
                 sh 'printenv && python3 -m venv ${WORKSPACE}/venv && source ${WORKSPACE}/venv/bin/activate && printenv'
             }
         }
+        stage('Setup Virtual Environment'){
+            steps {
+                sh 'printenv'
+            }
+        }
     }
     post {
         always {
