@@ -4,14 +4,17 @@ pipeline {
     stages {
         stage('Setup Virtual Environment'){
             steps {
-                sh 'printenv && python3 -m venv ${WORKSPACE}/venv && source ${WORKSPACE}/venv/bin/activate && printenv'
+                sh '''printenv
+                python3 -m venv ${WORKSPACE}/venv
+                source ${WORKSPACE}/venv/bin/activate
+                printenv'''
             }
         }
         stage('Print Environment Variables'){
             steps {
-                sh '''source ${WORKSPACE}/venv/bin/activate
-                    python main.py
-                '''
+                sh ''' source ${WORKSPACE}/venv/bin/activate
+                        python main.py
+                    '''
             }
         }
     }
