@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Print Environment Variables'){
             steps {
-                sh 'echo $VIRTUAL_ENV'
+                echo $VIRTUAL_ENV
             }
         }
     }
