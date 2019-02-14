@@ -8,8 +8,10 @@ pipeline {
     stages {
         stage('Setup Virtual Environment'){
             steps {
-                sh 'python3 -m venv ${WORKSPACE}/venv && source ${WORKSPACE}/venv/bin/activate'
-                sh 'printenv'
+                bash '''#!/bin/bash
+                        python3 -m venv ${WORKSPACE}/venv && source ${WORKSPACE}/venv/bin/activate
+                        printenv
+                    '''
                 //sh 'pip install -r requirements.txt'
             }
         }
