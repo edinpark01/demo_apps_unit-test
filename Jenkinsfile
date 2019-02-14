@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('TESTING') {
             steps{
-                sh 'printenv'
+                sh 'which python'
             }
             
         }
