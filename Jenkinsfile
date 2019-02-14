@@ -3,7 +3,10 @@ pipeline {
 
     stages {
         stage('TESTING') {
-            sh 'printenv'
+            steps{
+                sh 'printenv'
+            }
+            
         }
         stage('Build') {
             steps {
