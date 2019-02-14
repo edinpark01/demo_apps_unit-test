@@ -9,7 +9,9 @@ pipeline {
         }
         stage('Print Environment Variables'){
             steps {
-                sh 'source ${WORKSPACE}/venv/bin/activate && python main.py'
+                sh '''source ${WORKSPACE}/venv/bin/activate
+                    python main.py
+                '''
             }
         }
     }
