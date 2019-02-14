@@ -8,8 +8,7 @@ pipeline {
     stages {
         stage('Setup Virtual Environment'){
             steps {
-                sh '#!/bin/bash
-                    '''
+                sh '#!/bin/bash'
                 //sh 'pip install -r requirements.txt'
             }
             steps {
