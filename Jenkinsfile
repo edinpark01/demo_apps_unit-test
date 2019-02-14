@@ -6,15 +6,10 @@ pipeline {
     }
 
     stages {
-        stage('Print Enviroment Variables'){
-            steps {
-                sh 'printenv'
-            }
-        }
         stage('Setup Virtual Environment'){
             steps {
-                sh '$VENV_HOME'
-                sh 'python3 -m venv $VENV_HOME && source $VENV_HOME/bin/activate'
+                sh 'mkdir ${WORKSPACE}/env'
+                sh 'python3 -m venv ${WORKSPACE}/env && source ${WORKSPACE}/env/bin/activate'
                 //sh 'pip install -r requirements.txt'
             }
         }
