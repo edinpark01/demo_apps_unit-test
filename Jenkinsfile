@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        $VENV_HOME = '${WORKSPACE}/venv'
+        VENV_HOME = '${WORKSPACE}/venv'
     }
 
     stages {
