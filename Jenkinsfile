@@ -19,8 +19,7 @@ pipeline {
         }
         stage('Test environment') {
             steps {
-                echo "Test environment"
-                sh 'source activate ${$VENV_HOME} pip list which pip which python'
+                sh 'python main.py'
             }
         }
     }
