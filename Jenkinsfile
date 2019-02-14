@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Print Environment Variables'){
             steps {
-                echo $VIRTUAL_ENV
+                sh 'source ${WORKSPACE}/venv/bin/activate && python main.py'
             }
         }
     }
