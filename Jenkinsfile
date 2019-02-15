@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Setup Virtual Environment'){
             steps {
-                sh '''printenv
+                sh '''
                 python3 -m venv ${WORKSPACE}/venv
                 '''
             }
